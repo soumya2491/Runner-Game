@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Endless Runner - Subway Surfer Style</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <!-- Game UI Overlay -->
+        <div class="ui-overlay">
+            <!-- Top UI -->
+            <div class="top-ui">
+                <div class="score-display">
+                    <div class="score-item">
+                        <span class="score-label">Score</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Coins</span>
+                        <span id="coins">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Distance</span>
+                        <span id="distance">0m</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Power-up indicators -->
+            <div class="powerup-indicators">
+                <div id="magnetIndicator" class="powerup-indicator hidden">
+                    <span>🧲</span>
+                    <div class="powerup-timer"></div>
+                </div>
+                <div id="shieldIndicator" class="powerup-indicator hidden">
+                    <span>🛡️</span>
+                    <div class="powerup-timer"></div>
+                </div>
+                <div id="speedIndicator" class="powerup-indicator hidden">
+                    <span>⚡</span>
+                    <div class="powerup-timer"></div>
+                </div>
+            </div>
+            
+            <!-- Game Over Screen -->
+            <div id="gameOverScreen" class="game-screen hidden">
+                <div class="screen-content">
+                    <h2>Game Over!</h2>
+                    <div class="final-stats">
+                        <p>Final Score: <span id="finalScore">0</span></p>
+                        <p>Coins Collected: <span id="finalCoins">0</span></p>
+                        <p>Distance Traveled: <span id="finalDistance">0m</span></p>
+                    </div>
+                    <button id="restartBtn" class="game-btn">Play Again</button>
+                </div>
+            </div>
+            
+            <!-- Start Screen -->
+            <div id="startScreen" class="game-screen">
+                <div class="screen-content">
+                    <h1>Endless Runner</h1>
+                    <p>Use WASD or Arrow Keys to play</p>
+                    <p>A/← D/→ - Move lanes</p>
+                    <p>W/↑ - Jump</p>
+                    <p>S/↓ - Slide</p>
+                    <button id="startBtn" class="game-btn">Start Game</button>
+                </div>
+            </div>
+            
+            <!-- Mobile Controls -->
+            <div class="mobile-controls">
+                <div class="control-row">
+                    <button id="jumpBtn" class="control-btn">↑</button>
+                </div>
+                <div class="control-row">
+                    <button id="leftBtn" class="control-btn">←</button>
+                    <button id="slideBtn" class="control-btn">↓</button>
+                    <button id="rightBtn" class="control-btn">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Scripts -->
+    <script type="module" src="./effects.js"></script>
+    <script type="module" src="./player.js"></script>
+    <script type="module" src="./obstacles.js"></script>
+    <script type="module" src="./collectibles.js"></script>
+    <script type="module" src="./gameManager.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

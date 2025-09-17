@@ -1,0 +1,6 @@
+$ cd /workspace/html_template
+$ pnpm run lint
+
+ ERR_PNPM_NO_SCRIPT  Missing script: lint
+
+Command "lint" not found.
